@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="14630232-a3af-47d3-9cab-ef00283579e0" name="Default" comment="Docker MSsql with tomcat1">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PSYSJO_DOCKER_MSSQL/artifacts/.empty" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PSYSJO_DOCKER_MSSQL/logs/.empty" afterDir="false" />
-    </list>
+    <list default="true" id="14630232-a3af-47d3-9cab-ef00283579e0" name="Default" comment="Docker MSsql with tomcat1" />
     <ignored path=".idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,16 +36,6 @@
             <path>
               <item name="Docker" type="b2602c69:ProjectViewProjectNode" />
               <item name="Docker" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Docker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Docker" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Docker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Docker" type="462c0819:PsiDirectoryNode" />
-              <item name="PSYSJO_DOCKER_MSSQL" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -157,10 +143,10 @@
       <window_info anchor="right" id="Maven Projects" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32844037" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.32844037" />
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" />

@@ -1,0 +1,56 @@
+###########################################
+#                                         #
+#      PSYSJO APP & ORACLE DATABASE       #
+#                                         #
+###########################################
+version: '2.1'
+services:
+
+#---------------------------
+# Oracle Database
+#---------------------------
+  dbs:
+    image: oradb
+    container_name: oracle_database
+    #build: .
+    # image: psbox/ora-cnts
+    shm_size: 1G
+    ports:
+      - 1521:1521
+    working_dir: "/docker"
+    volumes:
+      - ".:/docker"
+    
+
+#---------------------------
+# tomcat server
+#---------------------------
+  app:
+    image: tomcat:latest
+    container_name: oracle_app
+    privileged: true
+    links:
+      - dbs:database
+    working_dir: "/docker"
+    ports:
+      - 8080:8080
+      - 8443:8443
+    volumes:
+      - ".:/docker"
+      - ./logs:/usr/local/tomcat/logs
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    command: sh /docker/deploy.sh 
+    depends_on:
+      - dbs
+    environment:
+      - COMPOSE_INTERACTIVE_NO_CLI=1
+      - PROJ_NAME=psysjo
+      - db_user=psysjo
+      - db_password=psysjo
+      - db_schema=psysjo
+      - db_type=ORACLE10
+      - db_driver=oracle.jdbc.OracleDriver
+      - db_url=jdbc:oracle:thin:@dbs:1521:XE
+      - db_validation_query=SELECT 1 FROM DUAL
+      - db_dialect=org.hibernate.dialect.Oracle10gDialect
+      - db_check_query=select count(*) from user_tables

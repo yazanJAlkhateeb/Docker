@@ -1,0 +1,4 @@
+sqlplus  SYSTEM/oracle << EOF
+  CREATE USER psysjo IDENTIFIED BY psysjo;
+  GRANT CONNECT, RESOURCE, CREATE VIEW TO psysjo;
+EOF
