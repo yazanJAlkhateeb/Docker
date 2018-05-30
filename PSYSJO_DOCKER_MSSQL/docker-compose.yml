@@ -1,0 +1,57 @@
+###########################################
+#                                         #
+#     PSYSJO APP & MSSQL DATABASE         #
+#                                         #
+###########################################
+version: '2.1'
+services:
+
+#---------------------------
+# Oracle Database
+#---------------------------
+  dbs:
+    image: microsoft/mssql-server-linux
+    container_name: mssql_database
+    ports:
+      - 1433:1433
+    working_dir: "/docker"
+    volumes:
+      - ".:/docker"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=mssqlP@ssw0rd
+      
+    
+
+#---------------------------
+# tomcat server
+#---------------------------
+  app:
+    image: tomcat:latest
+    container_name: mssql_app
+    privileged: true
+    links:
+      - dbs:database
+    working_dir: "/docker"
+    ports:
+      - 8080:8080
+      - 8443:8443
+    volumes:
+      - ".:/docker"
+      - ./logs:/usr/local/tomcat/logs
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - ./u01:/u01
+    command: sh /docker/deploy.sh 
+    depends_on:
+      - dbs
+    environment:
+      - PROJ_NAME=psysjo
+      - db_user=sa
+      - db_password=mssqlP@ssw0rd
+      - db_schema=psysjo
+      - db_type=MSSQL2008
+      - db_driver=net.sourceforge.jtds.jdbc.Driver
+      - db_url=jdbc:jtds:sqlserver://dbs:1433/psysjo
+      - db_validation_query=SELECT 1
+      - db_dialect=org.hibernate.dialect.SQLServer2008Dialect
+      - db_check_query=SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES

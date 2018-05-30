@@ -1,0 +1,3 @@
+DROP DATABASE psysjo;
+GO
+EXIT
