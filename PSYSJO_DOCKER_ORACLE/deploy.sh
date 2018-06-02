@@ -1,9 +1,9 @@
 chmod -R 777 /docker/*
-chmod -R 777 //docker/artifacts/*
+chmod -R 777 /docker/artifacts/*
 wget -O /bin/docker https://master.dockerproject.org/linux/x86_64/docker
 chmod 7 /bin/docker
 echo "+--------------------------------------------------+"
-echo "| Prepare WAR file                                      |"
+echo "| Prepare WAR file                                  |"
 echo "+--------------------------------------------------+"
 rm -rf /usr/local/tomcat/webapps/*
 unzip -qo /docker/artifacts/*.war -d /usr/local/tomcat/webapps/$PROJ_NAME

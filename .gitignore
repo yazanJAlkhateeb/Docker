@@ -1,11 +1,12 @@
-.idea
+/.idea
 **/*.iml
+workspace.xml
 # Compiled class file
 *.class
 
 # Log file
 *.log
-
+*.txt
 # BlueJ files
 *.ctxt
 
