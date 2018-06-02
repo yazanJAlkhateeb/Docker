@@ -1,12 +1,12 @@
-/.idea
-**/*.iml
-workspace.xml
 # Compiled class file
 *.class
 
 # Log file
 *.log
 *.txt
+PSYSJO_DOCKER_MSSQL/u01/*
+PSYSJO_DOCKER_ORACLE/u01/*
+
 # BlueJ files
 *.ctxt
 
@@ -22,3 +22,5 @@ workspace.xml
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+.idea
+**/*.iml
