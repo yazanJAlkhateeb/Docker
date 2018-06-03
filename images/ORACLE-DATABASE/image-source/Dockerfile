@@ -1,6 +1,5 @@
 FROM ubuntu:18.04
 
-
 ADD assets /assets
 RUN /assets/setup.sh
 

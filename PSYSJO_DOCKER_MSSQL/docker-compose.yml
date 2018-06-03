@@ -27,7 +27,7 @@ services:
 # tomcat server
 #---------------------------
   app:
-    image: tomcat:latest
+    image: tomcat:docker
     container_name: mssql_app
     privileged: true
     links:

@@ -1,7 +1,6 @@
 chmod -R 777 /docker/*
 chmod -R 777 /docker/artifacts/*
-wget -O /bin/docker https://master.dockerproject.org/linux/x86_64/docker
-chmod 7 /bin/docker
+sleep 5
 echo "+--------------------------------------------------+"
 echo "| Prepare WAR file                                      |"
 echo "+--------------------------------------------------+"
